@@ -10,10 +10,10 @@ public class main {
                 .distinct()
                 .collect(Collectors.toList());
 		System.out.println("Les points de l'envoloppe convexe sont:");
-		for(int i=0;i<hull.size();i++) {
-			System.out.format(Locale.FRANCE,"{%d:%d}\n",hull.get(i).x,hull.get(i).y);
-		}
-		System.out.println("sa marche:");
+//		for(int i=0;i<hull.size();i++) {
+//			System.out.format(Locale.FRANCE,"{%d:%d}\n",hull.get(i).x,hull.get(i).y);
+//		}
+//		System.out.println("sa marche:");
 		for(int i=0;i<newList.size();i++) {
 			System.out.format(Locale.FRANCE,"{%d:%d}\n",newList.get(i).x,newList.get(i).y);
 		}
