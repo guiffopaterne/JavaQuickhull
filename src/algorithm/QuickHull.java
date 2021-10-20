@@ -1,3 +1,4 @@
+package algorithm;
 import java.util.ArrayList;
 import java.util.Locale;
 // importer la librairie qui gere les listes
@@ -31,15 +32,15 @@ public class QuickHull{
 //	mesure la distance entre un point p et 
 //	le segment de droite cree pas les points a et b
 	
-	public Integer distance(Point a,Point b,Point p){
-		Integer value = (p.y - a.y)*(b.x - a.x)-(b.y-a.y)*(p.x-b.x);
+	public int distance(Point a,Point b,Point p){
+		int value = (p.y - a.y)*(b.x - a.x)-(b.y-a.y)*(p.x-b.x);
 		if(value>=0) {
 			return value;
 		}
 		return value*-1;
 	}
 //	connaitre si le point est interne au triangle
-	public Integer insideTriangle(Point a,Point b,Point c,Point p) {
+	public int insideTriangle(Point a,Point b,Point c,Point p) {
 		int a1 = this.searchSide(c, a, p)*this.searchSide(c, a, b);
 		int a2 = this.searchSide(a, b, p)*this.searchSide(a, b, c);
 		int a3 = this.searchSide(c, b, p)*this.searchSide(c, b, a);
@@ -61,7 +62,7 @@ public class QuickHull{
 		this.n = this.point.size();
 //		 @find:int pour determiner si on a trouve un point
 //		max_dist : recuperer le maximun de distance
-	    Integer find = -1, max_dist =0;
+	    int find = -1, max_dist =0;
 	    for(int i=0;i< this.n; i++) {
 	    	int temp= this.distance(A, B, this.point.get(i));
 	    	int side_local = this.searchSide(A, B, this.point.get(i));
@@ -77,13 +78,13 @@ public class QuickHull{
 	    }
 	    else {
 	    	hull.add(this.point.get(find));
-	    	System.out.format(Locale.FRANCE, "Les points qui sont a linterrieur du triangle forme par {A:%s,\n B: %s,\n P :%s} sont :\n",A.toString(),B.toString(),this.point.get(find).toString());
-	    	for(int i=0;i< this.n; i++) {
-	    		if(this.insideTriangle(A, B, this.point.get(find), this.point.get(i))>0) {
-	    			System.out.format(Locale.FRANCE, "{%s}\n",this.point.get(i).toString());
-	    		}
-	    	}
-	    }
+//	    	System.out.format(Locale.FRANCE, "Les points qui sont a linterrieur du triangle forme par {A:%s,\n B: %s,\n P :%s} sont :\n",A.toString(),B.toString(),this.point.get(find).toString());
+//	    	for(int i=0;i< this.n; i++) {
+//	    		if(this.insideTriangle(A, B, this.point.get(find), this.point.get(i))>0) {
+//	    			System.out.format(Locale.FRANCE, "{%s}\n",this.point.get(i).toString());
+//	    		}
+//	    	}
+    }
 	    
 //	    la recursivite 
 	    
