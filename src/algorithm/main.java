@@ -32,8 +32,6 @@ public class main {
 		return (path.toString()+separator+"data"+separator+Filename);
 	}
 	public static void generateCsv(String Filename, int col,int row) {
-//		Random RANDOM = new Random();
-//		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 		String absoluPathFile = pathFileCsv(Filename);
 		System.out.println("le chemin absolu  est :"+ absoluPathFile);
 		File ouputFile = new File(absoluPathFile);
